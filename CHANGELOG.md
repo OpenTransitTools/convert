@@ -6,22 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.1] - 2022-11-18
+## [0.2.0] - 2022-11-18
+### Added
+- Rename source loc files in .sh script; process multiple localization files for each lang.
+
 ### Fixed
 - Docs.
 - Run junk added to poetry.
-- Run junk added to poetry.
-
-### Changed
-- Initial project create.
 
 ## [0.1.0] - 2022-11-18
 ### Added
 - Initial project create.
 
-### Fixed
-- Run junk added to poetry.
+### Changed
+- Initial commit.
 
-[Unreleased]: https://github.com/OpenTransitTools/yaml-json-tools/compare/0.1.1...HEAD
-[0.1.1]: https://github.com/OpenTransitTools/yaml-json-tools/compare/0.1.0...0.1.1
+[Unreleased]: https://github.com/OpenTransitTools/yaml-json-tools/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/OpenTransitTools/yaml-json-tools/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/OpenTransitTools/yaml-json-tools/releases/tag/0.1.0
