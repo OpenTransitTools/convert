@@ -1,0 +1,1 @@
+DEFAULT_LOCALES=['en', 'es', 'fr', 'ko', 'vi', 'zh']

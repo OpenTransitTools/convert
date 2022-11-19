@@ -6,6 +6,8 @@ from mergedeep import merge
 import yaml
 import json
 
+from . import utils
+
 
 def find_yaml_files(file_name, dir_path='data'):
     file_locations = os.path.join(dir_path, '*', file_name)
@@ -17,10 +19,9 @@ def yml_file_to_object(file_path):
     obj = yaml.safe_load(Path(file_path).read_text())
 
 
-
-def yml_to_json(locales=['fr', 'vi']):
+def yml_to_json(locales=utils.DEFAULT_LOCALES, do_print=True):
+    ret_val = {}
     for l in locales:
-        print("\n\noutput {}:\n".format(l))
         combined_obj = {}
 
         fn = find_yaml_files(l + '.yml')
@@ -29,5 +30,15 @@ def yml_to_json(locales=['fr', 'vi']):
             obj = yaml.safe_load(Path(file_path).read_text())            
             combined_obj = merge(combined_obj, obj)
 
-        out_json=json.dumps(combined_obj, indent=2, ensure_ascii=False)
-        print(out_json)
+        # hash of combined localizations
+        ret_val[l] = combined_obj
+
+    if do_print:
+        for l in ret_val.keys():
+            print("\n\noutput {}:\n".format(l))
+            out_json = json.dumps(ret_val[l], indent=2, ensure_ascii=False)
+            print(out_json)
+
+    return ret_val
+
+
