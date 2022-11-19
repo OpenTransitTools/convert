@@ -6,9 +6,18 @@ OTP_PACKS=../../otp-ui/packages
 
 for n in `find $OTP_PACKS | grep i18n.*yml`
 do
+    # create destination sub-dir
     d=${n##$OTP_PACKS/}
     d=${d%/i18n*}
-    mkdir $d
-    cp $n $d/
+    mkdir -p $d
+
+    # rename the files 
+    rn=${n/$OTP_PACKS}
+    rn=${rn/\/i18n}
+    rn=${rn/_Hans}
+    rn=${rn/-US}
+
+    # copy src to renamed file in sub-dir
+    cp $n .$rn 
 done
 
