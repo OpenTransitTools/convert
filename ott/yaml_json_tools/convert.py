@@ -9,29 +9,29 @@ import json
 from . import utils
 
 
-def find_yaml_files(file_name, dir_path='data'):
+def find_yaml_files(file_name, dir_path):
     file_locations = os.path.join(dir_path, '*', file_name)
     filenames = glob.glob(file_locations)
     return filenames
 
 
-def yml_file_to_object(file_path):
-    obj = yaml.safe_load(Path(file_path).read_text())
+def combine_yml_files(locale, dir_path):
+    combined_obj = {}
+
+    fn = find_yaml_files(locale + '.yml', dir_path)
+    for f in fn:
+        file_path = f
+        obj = yaml.safe_load(Path(file_path).read_text())            
+        combined_obj = merge(combined_obj, obj)
+
+    return combined_obj
 
 
-def yml_to_json(locales=utils.DEFAULT_LOCALES, do_print=True):
+def yml_to_json(locales=utils.DEFAULT_LOCALES, do_print=True, dir_path='data'):
     ret_val = {}
     for l in locales:
-        combined_obj = {}
-
-        fn = find_yaml_files(l + '.yml')
-        for f in fn:
-            file_path = f
-            obj = yaml.safe_load(Path(file_path).read_text())            
-            combined_obj = merge(combined_obj, obj)
-
         # hash of combined localizations
-        ret_val[l] = combined_obj
+        ret_val[l] = combine_yml_files(l, dir_path)
 
     if do_print:
         for l in ret_val.keys():
