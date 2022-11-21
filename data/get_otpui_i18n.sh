@@ -2,7 +2,11 @@
 # copies .yml localization files from OTP-UI to this folder (with a bunch of sub-folders)
 #
 
-OTP_PACKS=../../otp-ui/packages
+DEV_DIR=../..
+OTP_PACKS=$DEV_DIR/otp-ui/packages
+TORA_ENGLISH=$DEV_DIR/trimet.org/src/intl/en.json
+
+cp $TORA_ENGLISH ./
 
 for n in `find $OTP_PACKS | grep i18n.*yml`
 do

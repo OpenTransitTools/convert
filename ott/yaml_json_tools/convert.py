@@ -20,9 +20,9 @@ def combine_yml_files(locale, dir_path):
 
     fn = find_yaml_files(locale + '.yml', dir_path)
     for f in fn:
-        file_path = f
-        obj = yaml.safe_load(Path(file_path).read_text())            
-        combined_obj = merge(combined_obj, obj)
+        with open(Path(f), encoding='utf8') as infile:
+            obj = yaml.safe_load(infile)
+            combined_obj = merge(combined_obj, obj)
 
     return combined_obj
 
