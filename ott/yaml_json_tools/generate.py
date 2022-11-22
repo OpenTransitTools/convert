@@ -18,9 +18,10 @@ def prepend_node_values(d, lang, sep="-"):
         v = dkv[2]
         if isinstance(v, str):
             k = dkv[1]
-            if len(v) < 1:
+            if len(v) < 1:  # no value, then use key as the value
                 v = k
-            dkv[0][k] = lang + sep + v 
+            if len(v) > 1:  # value needs to be longer than 1 char to prepend with <lang>-<value>
+                dkv[0][k] = lang + sep + v
 
 
 def json_to_localizations(locales=utils.DEFAULT_LOCALES, file_name='en.json', dir_path='data', do_print=False):
