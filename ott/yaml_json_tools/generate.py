@@ -45,8 +45,8 @@ def json_to_localizations(locales=utils.DEFAULT_LOCALES, file_name='en.json', di
         if file_name:
             from mergedeep import merge
 
-            en = os.path.join(dir_path, file_name)
-            tora_loc = utils.read_json(en)
+            f = os.path.join(dir_path, file_name)
+            tora_loc = utils.read_json(f)
 
             if not file_name.startswith(l):
                 prepend_node_values(tora_loc, l.upper())
@@ -62,4 +62,11 @@ def json_to_localizations(locales=utils.DEFAULT_LOCALES, file_name='en.json', di
             utils.write_json(out_file, out_json)
             
 
+def mock_localization(locale="ru", file_name='en.json', dir_path='.', do_print=False):
+    f = os.path.join(dir_path, file_name)
+    in_json = utils.read_json(f)
+    prepend_node_values(in_json, locale.upper())
 
+    out_json = utils.obj_to_json(in_json)
+    out_file = locale + ".json"
+    utils.write_json(out_file, out_json)
