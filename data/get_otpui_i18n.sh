@@ -1,9 +1,9 @@
 #
 # copies .yml localization files from OTP-UI to this folder (with a bunch of sub-folders)
 #
-DEV_DIR=../..
-OTP_PACKS=$DEV_DIR/otp-ui/packages
-TORA_ENGLISH=$DEV_DIR/trimet.org/src/intl/en.json
+DEV_DIR=${DEV_DIR:-../..}
+OTP_PACKS=${OTP_PACKS:-$DEV_DIR/otp-ui/packages}
+TORA_ENGLISH=${TORA_ENGLISH:-$DEV_DIR/trimet.org/src/intl/en.json}
 
 
 function to_relative_file()
