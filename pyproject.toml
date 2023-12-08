@@ -13,8 +13,7 @@ PyYAML = "^6.0"
 mergedeep = "^1.3.4"
 
 [tool.poetry.scripts]
-gtfs_feeds = "ott.convert.csv2json.gtfs.feeds_to_json"
-
+gtfs_feeds = "ott.convert.csv2json.gtfs:feeds_to_json"
 json2locs = "ott.convert.yaml2json.generate:json_to_localizations"
 mockloc = "ott.convert.yaml2json.generate:mock_localization"
 yml2json = "ott.convert.yaml2json.convert:yml_to_json"
