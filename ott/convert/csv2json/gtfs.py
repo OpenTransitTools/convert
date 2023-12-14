@@ -5,6 +5,12 @@ from ott.utils import file_utils
 
 this_module_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 
+loader_feeds = """
+feeds: [
+    {"url":"http://developer.trimet.org/schedule/gtfs.zip", "name":"TRIMET.gtfs.zip"},
+]
+"""
+
 def feeds_to_json():
     """ 
     """
@@ -12,5 +18,5 @@ def feeds_to_json():
     reader = csv.DictReader(file)
     fn = reader.fieldnames
     for row in reader:
-        print(row)
+        print(row.get('id'))
 
