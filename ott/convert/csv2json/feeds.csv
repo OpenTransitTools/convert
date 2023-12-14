@@ -1,7 +1,7 @@
-id             ,gtfs                                                                           ,alerts ,trips ,vehicles ,logo
-CTRAN          ,http://mail.c-tran.com/images/Google/GoogleTransitUpload.zip                   ,       ,      ,         ,
-RIDECONNECTION ,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip ,       ,      ,         ,
-#SMART         ,http://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip   ,       ,      ,         ,
-SAM            ,http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip                   ,       ,      ,         ,
-SWAN           ,http://oregon-gtfs.com/gtfs_data/swanisland-or-us/swanisland-or-us.zip         ,       ,      ,         ,
-TRIMET         ,https://developer.trimet.org/schedule/gtfs.zip                                 ,       ,      ,         ,
+id,gtfs,alerts,trips,vehicles,logo
+CTRAN,http://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,,,
+RIDECONNECTION,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip,,,,
+#SMART,http://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip,,,,
+SAM,http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip,,,,
+SWAN,http://oregon-gtfs.com/gtfs_data/swanisland-or-us/swanisland-or-us.zip,,,,
+TRIMET,https://developer.trimet.org/schedule/gtfs.zip,,,,
