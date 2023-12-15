@@ -19,5 +19,8 @@ def get_csv(feed, comment="#"):
 def feeds_to_json():
     """ """
     csv_dict = get_csv(os.path.join(this_module_dir, 'feeds.csv'))
-    tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'loader.mako'))
-    print(tmpl.render(csv=csv_dict))
+    loader_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'loader.mako'))
+    print(loader_tmpl.render(csv=csv_dict))
+
+    otp_router_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'otp_router.mako'))
+    print(otp_router_tmpl.render(csv=csv_dict))
