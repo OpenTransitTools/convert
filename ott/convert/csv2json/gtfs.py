@@ -12,9 +12,11 @@ def get_csv(feed, comment="#"):
     read csv file, skipping any line that begins with a comment (default to '#')
     note: fp file remains open, so that returned dict reader is valid later (closed fp causes problems)
     """
+    csv_data = []
     fp = open(feed, 'r')
-    csv_dict = csv.DictReader(filter(lambda row: row[0]!=comment, fp))
-    return csv_dict
+    for c in csv.DictReader(filter(lambda row: row[0]!=comment, fp)):
+        csv_data.append(c)
+    return csv_data
 
 
 def feeds_to_json():

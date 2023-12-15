@@ -1,7 +1,7 @@
 id,gtfs,alerts,trips,vehicles,logo
-CTRAN,http://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,, , , 
+CTRAN,http://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePostions,
 RIDECONNECTION,"http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip",,,,
- OUT OF DATE - SMART,http://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip,,,,
+SMART,http://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip,https://mysmartbus.com/gtfs-rt/alerts,https://mysmartbus.com/gtfs-rt/tripupdates,https://mysmartbus.com/gtfs-rt/vehiclepositions,
 SAM,http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip,,,,
 SWAN,http://oregon-gtfs.com/gtfs_data/swanisland-or-us/swanisland-or-us.zip,,,,
-TRIMET,https://developer.trimet.org/schedule/gtfs.zip,,,,
+TRIMET,https://developer.trimet.org/schedule/gtfs.zip,http://trimet.org/transweb/ws/V1/FeedSpecAlerts/includeFuture/true/suppressSystemWideAlerts/true,http://trimet.org/transweb/ws/V1/TripUpdate,http://trimet.org/transweb/ws/V1/VehiclePositions,
