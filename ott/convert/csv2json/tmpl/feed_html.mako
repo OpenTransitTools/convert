@@ -4,29 +4,21 @@ The Portland Regional Trip Planner currently aggregates data for the following a
 <h1>
 
 <table>
-<th>Operator Name	Service Alerts	Trip Updates	Vehicle Positions
+<tr>
+  <th>Agency</th><th>Dates</th><th>Days</th><th>Alerts</th><th>Trip Updates</th><th>Vehicle Positions</th>
+</tr>
 feeds: [
   %for c in csv:
     %if c['gtfs'].strip():
-    {"url": "${c['gtfs'].strip()}", "name": "${c['id'].strip()}.gtfs.zip"},
+<tr>
+  <td>${c['id'].strip()}</td>
+  <td>TBD</td>
+  <td>-111</td>
+  <td>TBD</td>
+  %if c['alerts'].strip(): <td>YES</td> else: <td>NO</td> %endif
+  %if c['alerts'].strip(): <td>YES</td> else: <td>NO</td> %endif
+  %if c['alerts'].strip(): <td>YES</td> else: <td>NO</td> %endif
+</tr>
     %endif
   %endfor
-]
-
-
-[gtfs_realtime]
-feeds: [
-  %for c in csv:
-    %if c['alerts'].strip() or c['trips'].strip() or c['vehicles'].strip():
-    {
-        %for n in ['alerts', 'trips', 'vehicles']:
-        %if c[n].strip():
-        "${n}": "${c[n].strip()}",
-        %endif
-        %endfor
-        "agency_id": "${c['id'].strip()}"
-    },
-    %endif
-  %endfor
-]
 </table>
