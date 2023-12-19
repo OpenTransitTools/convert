@@ -7,6 +7,10 @@ The Portland Regional Trip Planner currently aggregates data for the following a
 <tr>
   <th>Agency</th><th>Dates</th><th>Days</th><th>Alerts</th><th>Trip Updates</th><th>Vehicle Positions</th>
 </tr>
+<%
+  YES="&#9989;"
+  NO="&#10060;"
+%>
 feeds: [
   %for c in csv:
     %if c['gtfs'].strip():
@@ -15,9 +19,21 @@ feeds: [
   <td>TBD</td>
   <td>-111</td>
   <td>TBD</td>
-  %if c['alerts'].strip(): <td>YES</td> else: <td>NO</td> %endif
-  %if c['alerts'].strip(): <td>YES</td> else: <td>NO</td> %endif
-  %if c['alerts'].strip(): <td>YES</td> else: <td>NO</td> %endif
+  %if c['alerts'].strip():
+  <td>${YES}</td> 
+  %else:
+  <td>${NO}</td> 
+  %endif
+  %if c['trips'].strip():
+  <td>${YES}</td>
+  %else:
+  <td>${NO}</td>
+  %endif
+  %if c['vehicles'].strip():
+  <td>${YES}</td>
+  %else:
+  <td>${NO}</td>
+  %endif
 </tr>
     %endif
   %endfor
