@@ -24,3 +24,6 @@ def feeds_to_json():
 
     otp_router_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'otp_router.mako'))
     print(otp_router_tmpl.render(csv=csv_dict))
+
+    feed_html_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'feed_html.mako'))
+    print(feed_html_tmpl.render(csv=csv_dict))
