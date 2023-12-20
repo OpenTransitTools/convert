@@ -3,7 +3,7 @@ import csv
 import inspect
 from mako.template import Template
 
-from ott.utils import file_utils
+from ott.utils.parse.cmdline.base_cmdline import basic_cmdline, misc_options
 
 this_module_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 
@@ -16,14 +16,24 @@ def get_csv(feed, comment="#"):
     return csv_data
 
 
-def feeds_to_json():
-    """ """
+def render_template(tmpl, csv_dict, do_print=False):
+    loader_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', tmpl))
+    ret_val = loader_tmpl.render(csv=csv_dict)
+    if do_print:
+        print(ret_val)
+    return ret_val
+
+
+def main():
+    """ main """
     csv_dict = get_csv(os.path.join(this_module_dir, 'feeds.csv'))
-    loader_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'loader.mako'))
-    print(loader_tmpl.render(csv=csv_dict))
+    parser = basic_cmdline("poetry run gtfs_feeds", do_parse=False)
+    misc_options(parser, "loader", "router", "html", "all")
+    cmd = parser.parse_args()
 
-    otp_router_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'otp_router.mako'))
-    print(otp_router_tmpl.render(csv=csv_dict))
-
-    feed_html_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', 'feed_html.mako'))
-    print(feed_html_tmpl.render(csv=csv_dict))
+    if cmd.loader or cmd.all:
+        render_template('loader.mako', csv_dict, cmd.print)
+    if cmd.router or cmd.all:
+        render_template('otp_router.mako', csv_dict, cmd.print)
+    if cmd.html or cmd.all:
+        render_template('feed_html.mako', csv_dict, cmd.print)

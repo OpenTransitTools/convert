@@ -1,7 +1,9 @@
-<h1>
+<h2>
 ${len(csv)} agencies included
-The Portland Regional Trip Planner currently aggregates data for the following agencies:
+</h2>
 <h1>
+The Portland Regional Trip Planner currently aggregates data for the following agencies:
+</h1>
 
 <%
   YES="&#9989;"
