@@ -249,7 +249,7 @@ validators = "*"
 type = "git"
 url = "git@github.com:OpenTransitTools/utils.git"
 reference = "HEAD"
-resolved_reference = "dd93a56f1a5d26a4d3633424709bf0b6518d537d"
+resolved_reference = "3fdc3e4831aed11e7136dffc6e36b5c226abea19"
 
 [[package]]
 name = "pyyaml"

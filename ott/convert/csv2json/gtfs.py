@@ -2,10 +2,11 @@ import os
 import csv
 import inspect
 from mako.template import Template
+from ott.utils.parse.cmdline.base_cmdline import file_cmdline, misc_options
 
-from ott.utils.parse.cmdline.base_cmdline import basic_cmdline, misc_options
 
 this_module_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+
 
 def get_csv(feed, comment="#"):
     """ read csv file, skipping any line that begins with a comment (default to '#') """
@@ -26,11 +27,12 @@ def render_template(tmpl, csv_dict, do_print=False):
 
 def main():
     """ main """
-    csv_dict = get_csv(os.path.join(this_module_dir, 'feeds.csv'))
-    parser = basic_cmdline("poetry run gtfs_feeds", do_parse=False)
-    misc_options(parser, "loader", "router", "html", "all")
+    def_csv = os.path.join(this_module_dir, "feeds.csv")
+    parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
+    misc_options(parser, "loader", "router", "html", "print", "all")
     cmd = parser.parse_args()
 
+    csv_dict = get_csv(cmd.file)
     if cmd.loader or cmd.all:
         render_template('loader.mako', csv_dict, cmd.print)
     if cmd.router or cmd.all:
