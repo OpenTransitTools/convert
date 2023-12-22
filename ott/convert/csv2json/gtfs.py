@@ -29,7 +29,7 @@ def main():
     """ main """
     def_csv = os.path.join(this_module_dir, "feeds.csv")
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
-    misc_options(parser, "loader", "router", "html", "print", "all")
+    misc_options(parser, "loader", "router", "html", "pelias", "print", "all")
     cmd = parser.parse_args()
 
     csv_dict = get_csv(cmd.file)
@@ -37,5 +37,7 @@ def main():
         render_template('loader.mako', csv_dict, cmd.print)
     if cmd.router or cmd.all:
         render_template('otp_router.mako', csv_dict, cmd.print)
+    if cmd.pelias or cmd.all:
+        render_template('pelias.mako', csv_dict, cmd.print)
     if cmd.html or cmd.all:
         render_template('feed_html.mako', csv_dict, cmd.print)
