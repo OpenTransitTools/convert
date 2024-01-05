@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "convert"
-version = "0.1.0"
+version = "0.1.1"
 description = "tools to convert files, ala csv -> json, yml -> json for localization of OTP-UI, etc..."
 authors = ["Frank Purcell <fxpurcell@gmail.com>"]
 license = "Mozella 2.x"
@@ -8,11 +8,11 @@ readme = "README.md"
 packages = [{include = "ott/convert"}]
 
 [tool.poetry.dependencies]
-python = "3.6"
-PyYAML = "^6.0"
-mergedeep = "^1.3.4"
-"ott.utils" = {git = "git@github.com:OpenTransitTools/utils.git"}
 mako = "1.1.6"
+mergedeep = "^1.3.4"
+python = "^3.6"
+PyYAML = "^6.0"
+"ott.utils" = {git = "git@github.com:OpenTransitTools/utils.git"}
 
 [tool.poetry.scripts]
 gtfs_feeds = "ott.convert.csv2json.gtfs:main"
