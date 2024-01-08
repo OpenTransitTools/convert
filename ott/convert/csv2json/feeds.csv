@@ -17,8 +17,8 @@ WAPARK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/washingtonparkshuttle-o
 WOODBURN,https://oregon-gtfs.trilliumtransit.com/gtfs_data/woodburn-or-us/woodburn-or-us.zip,,,
 YAMHILL,http://ycta.connexionz.net/rtt/public/resource/gtfs.zip,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition
 # TOO BIG - AMTRAK,https://content.amtrak.com/content/gtfs/GTFS.zip,,,
-FLEX,http://gtfs.gis.flix.tech/gtfs_generic_us.zip,,,
+# FLEX,http://gtfs.gis.flix.tech/gtfs_generic_us.zip,,,
 CHERRIOTS,https://www.cherriots.org/media/doc/gtfs.zip,,,
-POINT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip,,,
-TILLAMOOK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip,http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto,,
+# POINT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip,,,
+# TILLAMOOK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip,http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto,,
 # NO ZIP - WAHKIAKUMFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-wa-us/wahkiakumferry-wa-us.zip,,,
