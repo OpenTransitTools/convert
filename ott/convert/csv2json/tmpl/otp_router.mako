@@ -19,9 +19,9 @@
     %if c['vehicles'].strip():
     {
       "type": "vehicle-positions",
-      "frequency": "39s",
+      "frequency": "29s",
       "url": "${c['vehicles'].strip()}",
-      "feedId": "${c['id'].strip()}",
+      "feedId": "${c['id'].strip()}"
     },
     %endif
   %endfor
