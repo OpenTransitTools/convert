@@ -46,5 +46,7 @@ def main():
     if cmd.html or cmd.all:
         render_template('feed_html.mako', csv_dict, cmd.print)
         output = True
-    if cmd.html or output is False:
-        render_template('text.mako', csv_dict, cmd.print)
+    if cmd.text or output is False:
+        render_template('text.mako', csv_dict, True)
+    if output is False:
+        parser.print_help()
