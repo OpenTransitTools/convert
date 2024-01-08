@@ -25,4 +25,4 @@
     },
     %endif
   %endfor
-  ]
+    ]
