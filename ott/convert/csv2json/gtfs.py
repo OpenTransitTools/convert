@@ -3,6 +3,8 @@ import csv
 import inspect
 from mako.template import Template
 from ott.utils.parse.cmdline.base_cmdline import file_cmdline, misc_options
+# compat_2_to_3.py is f'in stuff up
+# from ott.utils import file_utils
 
 
 this_module_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -22,6 +24,12 @@ def render_template(tmpl, csv_dict, do_print=False):
     ret_val = loader_tmpl.render(csv=csv_dict)
     if do_print:
         print(ret_val)
+    else:
+        txt = tmpl.replace('mako', 'txt')
+        print("output:  " + txt)
+        #file_utils.cat(tmpl.replace('mako', 'txt'), input=ret_val)
+        with open(txt, "w+") as f:
+            f.write(ret_val)
     return ret_val
 
 
