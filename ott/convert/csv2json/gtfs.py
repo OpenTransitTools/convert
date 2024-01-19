@@ -57,7 +57,7 @@ def main():
 
     csv_dict = get_csv(cmd.file)
     output = False
-    if cmd.capture:
+    if cmd.curl:
         curl_feeds(csv_dict, cmd.all)
         output = True
     else:
