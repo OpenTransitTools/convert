@@ -33,15 +33,24 @@ def render_template(tmpl, csv_dict, do_print=False):
     return ret_val
 
 
+def capture_feeds(csv_dict):
+    """ call URLs in this feed """
+    for f in csv_dict:
+        print(f)
+
+
 def main():
     """ main """
     def_csv = os.path.join(this_module_dir, "feeds.csv")
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
-    misc_options(parser, "loader", "builder", "router", "html", "pelias", "print", "text", "all")
+    misc_options(parser, "loader", "builder", "router", "pelias", "capture", "html", "print", "text", "all")
     cmd = parser.parse_args()
 
     csv_dict = get_csv(cmd.file)
     output = False
+    if cmd.capture:
+        capture_feeds(csv_dict)
+        output = True
     if cmd.loader or cmd.all:
         render_template('loader.mako', csv_dict, cmd.print)
         output = True
