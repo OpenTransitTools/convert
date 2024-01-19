@@ -1,5 +1,4 @@
 id,gtfs,alerts,trips,vehicles,logo
-# FEEDS: https://www.transit.land/map#8.94/45.39/-122.6928
 CANBY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbytransit-or-us/canbytransit-or-us.zip,,,
 CANBYFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbyferry-or-us/canbyferry-or-us.zip,,,
 CAT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip,,,,
