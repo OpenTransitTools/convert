@@ -5,7 +5,7 @@ CANBYFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbyferry-or-us/ca
 CAT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip,,,,
 CCRIDER,https://oregon-gtfs.trilliumtransit.com/gtfs_data/columbiacounty-or-us/columbiacounty-or-us.zip,,,
 CLACKAMAS,https://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip,,,
-C-TRAN,https://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePostions,
+CTRAN,https://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePostions,
 RIDECONNECTION,"http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip",,,,
 SAM,http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip,,,,
 SCTD,http://oregon-gtfs.com/gtfs_data/sctd-or-us/sctd-or-us.zip,,,
