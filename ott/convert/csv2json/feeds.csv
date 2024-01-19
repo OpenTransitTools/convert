@@ -19,5 +19,5 @@ YAMHILL,http://ycta.connexionz.net/rtt/public/resource/gtfs.zip,https://ycta.con
 # FLEX,http://gtfs.gis.flix.tech/gtfs_generic_us.zip,,,,
 CHERRIOTS,https://www.cherriots.org/media/doc/gtfs.zip,,,,
 # POINT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip,,,,
-# TILLAMOOK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip,http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto,,
+# TILLAMOOK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip,http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto,,,
 # NO ZIP - WAHKIAKUMFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-wa-us/wahkiakumferry-wa-us.zip,,,,
