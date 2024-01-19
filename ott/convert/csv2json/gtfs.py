@@ -33,40 +33,50 @@ def render_template(tmpl, csv_dict, do_print=False):
     return ret_val
 
 
-def capture_feeds(csv_dict):
+def curl_feeds(csv_dict, all=False):
     """ call URLs in this feed """
     for f in csv_dict:
-        print(f)
+        id = f.get('id').strip()
+        gtfs = f.get('gtfs').strip()
+        alerts = f.get('alerts').strip()
+        trips = f.get('trips').strip()
+        vehicles = f.get('vehicles').strip()
+        if id and gtfs and (all or alerts or trips or vehicles):
+            print( "curl {} > {}.gtfs.zip".format(gtfs, id))
+            if alerts: print( "curl {} > {}.alerts.pbf".format(alerts, id))
+            if trips: print( "curl {} > {}.trips.pbf".format(trips, id))
+            if vehicles: print( "curl {} > {}.vehicles.pbf".format(vehicles, id))
 
 
 def main():
     """ main """
     def_csv = os.path.join(this_module_dir, "feeds.csv")
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
-    misc_options(parser, "loader", "builder", "router", "pelias", "capture", "html", "print", "text", "all")
+    misc_options(parser, "loader", "builder", "router", "pelias", "curl", "html", "print", "text", "all")
     cmd = parser.parse_args()
 
     csv_dict = get_csv(cmd.file)
     output = False
     if cmd.capture:
-        capture_feeds(csv_dict)
+        curl_feeds(csv_dict, cmd.all)
         output = True
-    if cmd.loader or cmd.all:
-        render_template('loader.mako', csv_dict, cmd.print)
-        output = True
-    if cmd.builder or cmd.all:
-        render_template('otp_builder.mako', csv_dict, cmd.print)
-        output = True
-    if cmd.router or cmd.all:
-        render_template('otp_router.mako', csv_dict, cmd.print)
-        output = True
-    if cmd.pelias or cmd.all:
-        render_template('pelias.mako', csv_dict, cmd.print)
-        output = True
-    if cmd.html or cmd.all:
-        render_template('feed_html.mako', csv_dict, cmd.print)
-        output = True
-    if cmd.text or output is False:
-        render_template('text.mako', csv_dict, True)
-    if output is False:
-        parser.print_help()
+    else:
+        if cmd.loader or cmd.all:
+            render_template('loader.mako', csv_dict, cmd.print)
+            output = True
+        if cmd.builder or cmd.all:
+            render_template('otp_builder.mako', csv_dict, cmd.print)
+            output = True
+        if cmd.router or cmd.all:
+            render_template('otp_router.mako', csv_dict, cmd.print)
+            output = True
+        if cmd.pelias or cmd.all:
+            render_template('pelias.mako', csv_dict, cmd.print)
+            output = True
+        if cmd.html or cmd.all:
+            render_template('feed_html.mako', csv_dict, cmd.print)
+            output = True
+        if cmd.text or output is False:
+            render_template('text.mako', csv_dict, True)
+        if output is False:
+            parser.print_help()
