@@ -3,8 +3,6 @@ import csv
 import inspect
 from mako.template import Template
 from ott.utils.parse.cmdline.base_cmdline import file_cmdline, misc_options
-# compat_2_to_3.py is f'in stuff up
-# from ott.utils import file_utils
 
 
 this_module_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -33,6 +31,38 @@ def render_template(tmpl, csv_dict, do_print=False):
     return ret_val
 
 
+def to_logo_dict(csv_line):
+    """ 
+    pull any optional logo url(s) from the csv line
+
+    they may have an agency_id:: prepended to the URL 
+    """
+    ret_val = []
+    feed_id = csv_line.get('id').strip()
+    logo = csv_line.get('logo').strip()
+    if feed_id and logo:
+        for l in logo.split(";"):
+            # has agency_id::url ... parse each out from ::
+            if "::" in l:
+                agency_id = l.split('::', 1)[0]
+                url = l.split('::', 1)[1]
+            else:
+                agency_id = feed_id
+                url = l
+            if url.strip():
+                if '.' in url:
+                    ext = url.rsplit('.', 1)[1]
+                else:
+                    import pdb; pdb.set_trace()
+                    ext = 'png'
+                ret_val.append({
+                    'id': "{}:{}".format(feed_id, agency_id),
+                    'url': url,
+                    'ext': ext
+                });
+    return ret_val
+
+
 def curl_feeds(csv_dict, all=False):
     """ call URLs in this feed """
     for f in csv_dict:
@@ -46,6 +76,9 @@ def curl_feeds(csv_dict, all=False):
             if alerts: print( "curl {} > {}.alerts.pbf".format(alerts, id))
             if trips: print( "curl {} > {}.trips.pbf".format(trips, id))
             if vehicles: print( "curl {} > {}.vehicles.pbf".format(vehicles, id))
+            logos = to_logo_dict(f)
+            for l in logos:
+                print( "curl {} > {}.{}".format(l.get('url'), l.get('id'), l.get('ext')))
 
 
 def main():
