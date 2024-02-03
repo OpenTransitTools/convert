@@ -19,7 +19,7 @@ def get_csv(feed, comment="#"):
 
 def render_template(tmpl, csv_dict, do_print=False):
     loader_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', tmpl))
-    ret_val = loader_tmpl.render(csv=csv_dict)
+    ret_val = loader_tmpl.render(csv=csv_dict, logo=to_logo_dict)
     if do_print:
         print(ret_val)
     else:
@@ -71,21 +71,29 @@ def curl_feeds(csv_dict, all=False):
         alerts = f.get('alerts').strip()
         trips = f.get('trips').strip()
         vehicles = f.get('vehicles').strip()
-        if id and gtfs and (all or alerts or trips or vehicles):
-            print( "curl {} > {}.gtfs.zip".format(gtfs, id))
-            if alerts: print( "curl {} > {}.alerts.pbf".format(alerts, id))
-            if trips: print( "curl {} > {}.trips.pbf".format(trips, id))
-            if vehicles: print( "curl {} > {}.vehicles.pbf".format(vehicles, id))
-            logos = to_logo_dict(f)
-            for l in logos:
-                print( "curl {} > {}.{}".format(l.get('url'), l.get('id'), l.get('ext')))
+        if id and gtfs:
+            if all:
+                # GTFS
+                print( "curl {} > {}.gtfs.zip".format(gtfs, id))
+
+                # LOGO URLS
+                logos = to_logo_dict(f)
+                for l in logos:
+                    print( "curl {} > {}.{}".format(l.get('url'), l.get('id'), l.get('ext')))
+
+            # real time urls
+            if (all or alerts or trips or vehicles):
+                if alerts: print( "curl {} > {}.alerts.pbf".format(alerts, id))
+                if trips: print( "curl {} > {}.trips.pbf".format(trips, id))
+                if vehicles: print( "curl {} > {}.vehicles.pbf".format(vehicles, id))
+
 
 
 def main():
     """ main """
     def_csv = os.path.join(this_module_dir, "feeds.csv")
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
-    misc_options(parser, "loader", "builder", "router", "pelias", "curl", "html", "print", "text", "all")
+    misc_options(parser, "loader", "builder", "router", "ui", "pelias", "curl", "html", "print", "text", "all")
     cmd = parser.parse_args()
 
     csv_dict = get_csv(cmd.file)
@@ -102,6 +110,9 @@ def main():
             output = True
         if cmd.router or cmd.all:
             render_template('otp_router.mako', csv_dict, cmd.print)
+            output = True
+        if cmd.ui or cmd.all:
+            render_template('otp_ui.mako', csv_dict, cmd.print)
             output = True
         if cmd.pelias or cmd.all:
             render_template('pelias.mako', csv_dict, cmd.print)
