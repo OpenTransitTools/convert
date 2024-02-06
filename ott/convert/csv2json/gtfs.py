@@ -49,12 +49,16 @@ def to_logo_dict(csv_line):
             else:
                 agency_id = feed_id
                 url = l
+
             if url.strip():
+                # find logo's 3-digit file extension
+                ext = None
                 if '.' in url:
                     ext = url.rsplit('.', 1)[1]
-                else:
-                    import pdb; pdb.set_trace()
+                if ext is None or len(ext) > 3:
+                    #import pdb; pdb.set_trace()
                     ext = 'png'
+
                 ret_val.append({
                     'id': "{}:{}".format(feed_id, agency_id),
                     'url': url,
