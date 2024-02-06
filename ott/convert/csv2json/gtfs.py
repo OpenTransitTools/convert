@@ -18,8 +18,16 @@ def get_csv(feed, comment="#"):
 
 
 def render_template(tmpl, csv_dict, do_print=False):
+    def safe_num(num, def_num=888):
+        ret_val = def_num
+        try:
+            ret_val = int(num)
+        except:
+            ret_val = def_num
+        return ret_val
+
     loader_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', tmpl))
-    ret_val = loader_tmpl.render(csv=csv_dict, logo=to_logo_dict)
+    ret_val = loader_tmpl.render(csv=csv_dict, logo=to_logo_dict, num=safe_num)
     if do_print:
         print(ret_val)
     else:

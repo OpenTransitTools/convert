@@ -1,23 +1,23 @@
-id,gtfs,alerts,trips,vehicles,logo
-CANBY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbytransit-or-us/canbytransit-or-us.zip,,,,227::https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
-CANBYFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbyferry-or-us/canbyferry-or-us.zip,,,,1731::https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
-CAT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip,,,,
-CCRIDER,https://oregon-gtfs.trilliumtransit.com/gtfs_data/columbiacounty-or-us/columbiacounty-or-us.zip,,,,
-CLACKAMAS,https://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip,,,,
-CTRAN,https://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,C-TRAN::https://d2tyb7byn1fef9.cloudfront.net/ctran.png
-RIDECONNECTION,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip,,,,1589::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1586::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1583::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1582::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1581::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1577::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1576::https://rideconnection.org/assets/images/_template/rc_logo.svg;;133::https://rideconnection.org/assets/images/_template/rc_logo.svg
-SAM,http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip,,,,
-SCTD,http://oregon-gtfs.com/gtfs_data/sctd-or-us/sctd-or-us.zip,,,,
-SKAMANIA,https://data.trilliumtransit.com/gtfs/skamaniacounty-wa-us/skamaniacounty-wa-us.zip,,,,
-SMART,http://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip,https://mysmartbus.com/gtfs-rt/alerts,https://mysmartbus.com/gtfs-rt/tripupdates,https://mysmartbus.com/gtfs-rt/vehiclepositions,214::https://www.ridesmart.com/sites/all/themes/aha_compass_smart/logo.png
-SWAN,http://oregon-gtfs.com/gtfs_data/swanisland-or-us/swanisland-or-us.zip,,,,
-TRIMET,https://developer.trimet.org/schedule/gtfs.zip,http://trimet.org/transweb/ws/V1/FeedSpecAlerts/includeFuture/true/suppressSystemWideAlerts/true,http://trimet.org/transweb/ws/V1/TripUpdate,http://trimet.org/transweb/ws/V1/VehiclePositions,http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png;;PSC::https://d2tyb7byn1fef9.cloudfront.net/psc.png;;TRAM::https://d2tyb7byn1fef9.cloudfront.net/tram.png
-WAPARK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/washingtonparkshuttle-or-us/washingtonparkshuttle-or-us.zip,,,https://ewp.transloc.com/subscriptions/gtfsrt/vehicles.ashx?asJson=true,
-WOODBURN,https://oregon-gtfs.trilliumtransit.com/gtfs_data/woodburn-or-us/woodburn-or-us.zip,,,,
-YAMHILL,http://ycta.connexionz.net/rtt/public/resource/gtfs.zip,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition,1::https://ycbus.org/wp-content/uploads/2019/04/transit-logo.jpg
-CHERRIOTS,https://www.cherriots.org/media/doc/gtfs.zip,,,,cherriots-salem-or-us::https://www.cherriots.org/static/cherriots/images/logo.png
-# TOO BIG - AMTRAK,https://content.amtrak.com/content/gtfs/GTFS.zip,A,T,V,L
-# FLEX,http://gtfs.gis.flix.tech/gtfs_generic_us.zip,,,,
-# POINT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip,,,,
-# TILLAMOOK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip,http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto,,,
-# NO ZIP - WAHKIAKUMFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-wa-us/wahkiakumferry-wa-us.zip,,,,
+id,gtfs,alerts,trips,vehicles,order,logo
+CANBY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbytransit-or-us/canbytransit-or-us.zip,,,,,227::https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
+CANBYFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbyferry-or-us/canbyferry-or-us.zip,,,,,1731::https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
+CAT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip,,,,,,
+CCRIDER,https://oregon-gtfs.trilliumtransit.com/gtfs_data/columbiacounty-or-us/columbiacounty-or-us.zip,,,,,
+CLACKAMAS,https://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip,,,,40,
+CTRAN,https://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,10,C-TRAN::https://d2tyb7byn1fef9.cloudfront.net/ctran.png
+RIDECONNECTION,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip,,,,40,1589::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1586::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1583::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1582::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1581::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1577::https://rideconnection.org/assets/images/_template/rc_logo.svg;;1576::https://rideconnection.org/assets/images/_template/rc_logo.svg;;133::https://rideconnection.org/assets/images/_template/rc_logo.svg
+SAM,http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip,,,,,
+SCTD,http://oregon-gtfs.com/gtfs_data/sctd-or-us/sctd-or-us.zip,,,,,
+SKAMANIA,https://data.trilliumtransit.com/gtfs/skamaniacounty-wa-us/skamaniacounty-wa-us.zip,,,,,
+SMART,http://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip,https://mysmartbus.com/gtfs-rt/alerts,https://mysmartbus.com/gtfs-rt/tripupdates,https://mysmartbus.com/gtfs-rt/vehiclepositions,20,214::https://www.ridesmart.com/sites/all/themes/aha_compass_smart/logo.png
+SWAN,http://oregon-gtfs.com/gtfs_data/swanisland-or-us/swanisland-or-us.zip,,,,8,
+TRIMET,https://developer.trimet.org/schedule/gtfs.zip,http://trimet.org/transweb/ws/V1/FeedSpecAlerts/includeFuture/true/suppressSystemWideAlerts/true,http://trimet.org/transweb/ws/V1/TripUpdate,http://trimet.org/transweb/ws/V1/VehiclePositions,1,http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png;;PSC::https://d2tyb7byn1fef9.cloudfront.net/psc.png;;TRAM::https://d2tyb7byn1fef9.cloudfront.net/tram.png
+WAPARK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/washingtonparkshuttle-or-us/washingtonparkshuttle-or-us.zip,,,https://ewp.transloc.com/subscriptions/gtfsrt/vehicles.ashx?asJson=true,5,
+WOODBURN,https://oregon-gtfs.trilliumtransit.com/gtfs_data/woodburn-or-us/woodburn-or-us.zip,,,,,
+YAMHILL,http://ycta.connexionz.net/rtt/public/resource/gtfs.zip,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition,30,1::https://ycbus.org/wp-content/uploads/2019/04/transit-logo.jpg
+CHERRIOTS,https://www.cherriots.org/media/doc/gtfs.zip,,,,50,cherriots-salem-or-us::https://www.cherriots.org/static/cherriots/images/logo.png
+# TOO BIG - AMTRAK,https://content.amtrak.com/content/gtfs/GTFS.zip,A,T,V,L,
+# FLEX,http://gtfs.gis.flix.tech/gtfs_generic_us.zip,,,,,
+# POINT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip,,,,,
+# TILLAMOOK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip,http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto,,,,
+# NO ZIP - WAHKIAKUMFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-wa-us/wahkiakumferry-wa-us.zip,,,,,
