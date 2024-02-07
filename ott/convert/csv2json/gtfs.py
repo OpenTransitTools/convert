@@ -1,8 +1,10 @@
 import os
+import sys
 import csv
 import inspect
 from mako.template import Template
 from ott.utils.parse.cmdline.base_cmdline import file_cmdline, misc_options
+from ott.utils import file_utils
 
 
 this_module_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -50,7 +52,6 @@ def make_feed_agency_id(csv_line, def_id="BLANK-BLANK"):
     except:
         ret_val = def_id
     return ret_val
-
 
 
 def curl_feeds(feeds, logos, all=False):
@@ -122,15 +123,34 @@ def gtfs_feed_parser():
             parser.print_help()
 
 
+def cat_agency_data():
+    """
+    cat_agency_data: will output agency id(s) and name(s) from a directory of GTFS files
+    > poetry run agency_data <dir>
+    """
+    args = sys.argv[1:]
+    gtfs_dir = args[0] if len(args) > 0 else "../cache"
+    print()
+    for f in file_utils.ls(gtfs_dir, 'gtfs.zip', True):
+        a = file_utils.unzip_file(f, 'agency.txt')
+        print(f)
+        cmt = ""
+        #if "RIDECONN" in f:
+        #    cmt = " (RC)"
+        for c in get_csv(a):
+            print('{}{},{}'.format(c.get('agency_name').strip(), cmt, c.get('agency_id')))
+        print()
+
+
+
 def csv2json():
     """
-    main -- simple example
+    csv2json: simple example showing convert to pretty json (array)
     > poetry run csv2json  # default file is ott/convert/csv2json/feeds.csv
     > poetry run csv2json ott/convert/csv2json/logos.csv
     """
     import json
-    import sys
     args = sys.argv[1:]
-    csv = args[0] if len(args) > 0 else os.path.join(this_module_dir, "feeds.csv")
-    dict = get_csv(csv)
-    print(json.dumps(dict, indent=4))
+    file = args[0] if len(args) > 0 else os.path.join(this_module_dir, "feeds.csv")
+    csv = get_csv(file)
+    print(json.dumps(csv, indent=4))

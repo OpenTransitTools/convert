@@ -1,29 +1,29 @@
-id,name,order,agency_id,url
-CANBY,Canby,,227,https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
-CANBYFERRY,Canby Ferry,,1731,https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
+id,name,agency_id,order,url
+CANBY,Canby,227,,https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
+CANBYFERRY,Canby Ferry,1731,,https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
 CAT,Columbia Area Transit,,,
 CAT,Hood Exp,,,
 CCRIDER,CC Rider,,,
-CHERRIOTS,Cherriots,50,cherriots-salem-or-us,https://www.cherriots.org/static/cherriots/images/logo.png
+CHERRIOTS,Cherriots,cherriots-salem-or-us,50,https://www.cherriots.org/static/cherriots/images/logo.png
 CLACKAMAS,Clackamas,,,
-CTRAN,C-TRAN,10,C-TRAN,https://d2tyb7byn1fef9.cloudfront.net/ctran.png
-RIDECONNECTION,,40,1589,https://rideconnection.org/assets/images/_template/rc_logo.svg
-RIDECONNECTION,,40,1586,https://rideconnection.org/assets/images/_template/rc_logo.svg
-RIDECONNECTION,,40,1583,https://rideconnection.org/assets/images/_template/rc_logo.svg
-RIDECONNECTION,,40,1582,https://rideconnection.org/assets/images/_template/rc_logo.svg
-RIDECONNECTION,,40,1581,https://rideconnection.org/assets/images/_template/rc_logo.svg
-RIDECONNECTION,,40,1577,https://rideconnection.org/assets/images/_template/rc_logo.svg
-RIDECONNECTION,,40,1576,https://rideconnection.org/assets/images/_template/rc_logo.svg
-RIDECONNECTION,,40,133,https://rideconnection.org/assets/images/_template/rc_logo.svg
+CTRAN,C-TRAN,C-TRAN,10,https://d2tyb7byn1fef9.cloudfront.net/ctran.png
+RIDECONNECTION,,1589,https://rideconnection.org/assets/images/_template/rc_logo.svg
+RIDECONNECTION,,1586,,https://rideconnection.org/assets/images/_template/rc_logo.svg
+RIDECONNECTION,,1583,,https://rideconnection.org/assets/images/_template/rc_logo.svg
+RIDECONNECTION,,1582,,https://rideconnection.org/assets/images/_template/rc_logo.svg
+RIDECONNECTION,,1581,,https://rideconnection.org/assets/images/_template/rc_logo.svg
+RIDECONNECTION,,1577,,https://rideconnection.org/assets/images/_template/rc_logo.svg
+RIDECONNECTION,,1576,,https://rideconnection.org/assets/images/_template/rc_logo.svg
+RIDECONNECTION,,133,,https://rideconnection.org/assets/images/_template/rc_logo.svg
 SAM,Sandy Area Metro,,,
 SCTD,South Clackamas Transit District,,,
 SKAMANIA,,,,
-SMART,,20,214,https://www.ridesmart.com/sites/all/themes/aha_compass_smart/logo.png
+SMART,,214,,https://www.ridesmart.com/sites/all/themes/aha_compass_smart/logo.png
 SWAN,Swan Island,,,
 SWAN,Tualitin Airport,,,
-TRIMET,TriMet,1,,http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png
-TRIMET,Portland Streetcar,1,PSC,https://d2tyb7byn1fef9.cloudfront.net/psc.png
-TRIMET,Portland Aerial Tram,1,TRAM,https://d2tyb7byn1fef9.cloudfront.net/tram.png
-WAPARK,Washington Park Shuttle,5,,
+TRIMET,TriMet,,1,http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png
+TRIMET,Portland Streetcar,PSC,1,https://d2tyb7byn1fef9.cloudfront.net/psc.png
+TRIMET,Portland Aerial Tram,TRAM,1,https://d2tyb7byn1fef9.cloudfront.net/tram.png
+WAPARK,Washington Park Shuttle,,,
 WOODBURN,Woodburn,,,
-YAMHILL,YC Bus,30,1,https://ycbus.org/wp-content/uploads/2021/11/YCT21-0913-Anniversary-Logo_FullColor-269x300.png
+YAMHILL,YC Bus,1,30,https://ycbus.org/wp-content/uploads/2021/11/YCT21-0913-Anniversary-Logo_FullColor-269x300.png

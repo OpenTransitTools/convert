@@ -18,6 +18,8 @@ PyYAML = "^6.0"
 [tool.poetry.scripts]
 csv2json = "ott.convert.csv2json.gtfs:csv2json"
 gtfs_feeds = "ott.convert.csv2json.gtfs:gtfs_feed_parser"
+agency_data = "ott.convert.csv2json.gtfs:cat_agency_data"
+
 json2locs = "ott.convert.yaml2json.generate:json_to_localizations"
 mockloc = "ott.convert.yaml2json.generate:mock_localization"
 yml2json = "ott.convert.yaml2json.convert:yml_to_json"
