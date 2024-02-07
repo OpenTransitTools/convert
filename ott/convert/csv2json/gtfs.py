@@ -80,8 +80,11 @@ def curl_feeds(feeds, logos, all=False):
             print("curl {} > {}.{}".format(url, make_feed_agency_id(l), ext))
 
 
-def main():
-    """ main """
+def gtfs_feed_parser():
+    """
+    feed parser
+    reads feeds.csv (and logos.csv) and outputs various .json config outputs
+    """
     def_csv = os.path.join(this_module_dir, "feeds.csv")
     logo_csv = os.path.join(this_module_dir, "logos.csv")    
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
@@ -117,3 +120,18 @@ def main():
             render_template('text.mako', csv_dict, True)
         if output is False:
             parser.print_help()
+
+
+def csv2json():
+    """
+    main -- simple example
+    > poetry run csv2json
+    > poetry run csv2json logos.csv
+    """
+    import json
+    import sys
+    args = sys.argv[1:]
+    file = args[0] if len(args) > 0 else "feeds.csv"
+    csv = os.path.join(this_module_dir, file)
+    dict = get_csv(csv)
+    print(json.dumps(dict, indent=4))
