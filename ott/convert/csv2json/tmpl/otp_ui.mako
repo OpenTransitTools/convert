@@ -1,14 +1,12 @@
 transitOperators:
 %for c in csv:
-%if c['gtfs'].strip():
-  %for l in logo(c):
+  %if c['id'].strip():
   - feedId: ${c['id']}
-    agencyId: ${l['id']}
-    logo: ${l['url']}
+    agencyId: ${agency(c)}
+    logo: ${c['url']}
     order: ${num(c['order'])}
-    %if loop.index == 0:
-    name: ${c['id']}
+    %if c['name'].strip():
+    name: "${c['name']}"
     %endif
-  %endfor
-%endif
+  %endif
 %endfor

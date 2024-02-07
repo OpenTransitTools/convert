@@ -27,7 +27,7 @@ def render_template(tmpl, csv_dict, do_print=False):
         return ret_val
 
     loader_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', tmpl))
-    ret_val = loader_tmpl.render(csv=csv_dict, logo=to_logo_dict, num=safe_num)
+    ret_val = loader_tmpl.render(csv=csv_dict, agency=make_feed_agency_id, num=safe_num)
     if do_print:
         print(ret_val)
     else:
@@ -39,45 +39,23 @@ def render_template(tmpl, csv_dict, do_print=False):
     return ret_val
 
 
-def to_logo_dict(csv_line):
-    """ 
-    pull any optional logo url(s) from the csv line
-
-    they may have an agency_id:: prepended to the URL 
-    """
-    ret_val = []
-    feed_id = csv_line.get('id').strip()
-    logo = csv_line.get('logo').strip()
-    if feed_id and logo:
-        for l in logo.split(";"):
-            # has agency_id::url ... parse each out from ::
-            if "::" in l:
-                agency_id = l.split('::', 1)[0]
-                url = l.split('::', 1)[1]
-            else:
-                agency_id = feed_id
-                url = l
-
-            if url.strip():
-                # find logo's 3-digit file extension
-                ext = None
-                if '.' in url:
-                    ext = url.rsplit('.', 1)[1]
-                if ext is None or len(ext) > 3:
-                    #import pdb; pdb.set_trace()
-                    ext = 'png'
-
-                ret_val.append({
-                    'id': "{}:{}".format(feed_id, agency_id),
-                    'url': url,
-                    'ext': ext
-                });
+def make_feed_agency_id(csv_line, def_id="BLANK-BLANK"):
+    try:
+        # import pdb; pdb.set_trace()
+        id = csv_line.get('id').strip()        
+        agency_id = csv_line.get('agency_id').strip()
+        if agency_id is None or len(agency_id) < 1:
+            agency_id = id
+        ret_val = "{}-{}".format(id, agency_id)
+    except:
+        ret_val = def_id
     return ret_val
 
 
-def curl_feeds(csv_dict, all=False):
+
+def curl_feeds(feeds, logos, all=False):
     """ call URLs in this feed """
-    for f in csv_dict:
+    for f in feeds:
         id = f.get('id').strip()
         gtfs = f.get('gtfs').strip()
         alerts = f.get('alerts').strip()
@@ -85,33 +63,36 @@ def curl_feeds(csv_dict, all=False):
         vehicles = f.get('vehicles').strip()
         if id and gtfs:
             if all:
-                # GTFS
+                # curl GTFS urls
                 print( "curl {} > {}.gtfs.zip".format(gtfs, id))
 
-                # LOGO URLS
-                logos = to_logo_dict(f)
-                for l in logos:
-                    print( "curl {} > {}.{}".format(l.get('url'), l.get('id'), l.get('ext')))
-
-            # real time urls
+            # curl GTFS-RT urls
             if (all or alerts or trips or vehicles):
                 if alerts: print( "curl {} > {}.alerts.pbf".format(alerts, id))
                 if trips: print( "curl {} > {}.trips.pbf".format(trips, id))
                 if vehicles: print( "curl {} > {}.vehicles.pbf".format(vehicles, id))
 
+    # curl LOGO urls
+    for l in logos:
+        url = l.get('url').strip()
+        if url or all:
+            ext = url.rsplit('.', 1)[1] if '.' in url else 'png'
+            print("curl {} > {}.{}".format(url, make_feed_agency_id(l), ext))
 
 
 def main():
     """ main """
     def_csv = os.path.join(this_module_dir, "feeds.csv")
+    logo_csv = os.path.join(this_module_dir, "logos.csv")    
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
     misc_options(parser, "loader", "builder", "router", "ui", "pelias", "curl", "html", "print", "text", "all")
     cmd = parser.parse_args()
 
     csv_dict = get_csv(cmd.file)
+    logo_dict = get_csv(logo_csv)
     output = False
     if cmd.curl:
-        curl_feeds(csv_dict, cmd.all)
+        curl_feeds(csv_dict, logo_dict, cmd.all)
         output = True
     else:
         if cmd.loader or cmd.all:
@@ -124,7 +105,7 @@ def main():
             render_template('otp_router.mako', csv_dict, cmd.print)
             output = True
         if cmd.ui or cmd.all:
-            render_template('otp_ui.mako', csv_dict, cmd.print)
+            render_template('otp_ui.mako', logo_dict, cmd.print)
             output = True
         if cmd.pelias or cmd.all:
             render_template('pelias.mako', csv_dict, cmd.print)
