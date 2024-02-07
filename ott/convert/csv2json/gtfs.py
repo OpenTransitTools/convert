@@ -125,13 +125,12 @@ def gtfs_feed_parser():
 def csv2json():
     """
     main -- simple example
-    > poetry run csv2json
-    > poetry run csv2json logos.csv
+    > poetry run csv2json  # default file is ott/convert/csv2json/feeds.csv
+    > poetry run csv2json ott/convert/csv2json/logos.csv
     """
     import json
     import sys
     args = sys.argv[1:]
-    file = args[0] if len(args) > 0 else "feeds.csv"
-    csv = os.path.join(this_module_dir, file)
+    csv = args[0] if len(args) > 0 else os.path.join(this_module_dir, "feeds.csv")
     dict = get_csv(csv)
     print(json.dumps(dict, indent=4))
