@@ -3,7 +3,7 @@ transitOperators:
   %if c['id'].strip():
   - feedId: ${c['id']}
     agencyId: ${agency(c)}
-    logo: ${c['url']}
+    logo: ${img(c)}
     order: ${num(c['order'])}
     %if c['name'].strip():
     name: "${c['name']}"
