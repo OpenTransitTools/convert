@@ -12,8 +12,8 @@ mako = "1.1.6"
 mergedeep = "^1.3.4"
 python = "^3.6"
 PyYAML = "^6.0"
-# "ott.utils" = {git = "https://github.com/OpenTransitTools/utils.git"}
-"ott.utils" = { path = "../utils/", develop = true }
+"ott.utils" = {git = "https://github.com/OpenTransitTools/utils.git"}
+# "ott.utils" = { path = "../utils/", develop = true }
 
 [tool.poetry.scripts]
 csv2json = "ott.convert.csv2json.gtfs:csv2json"
