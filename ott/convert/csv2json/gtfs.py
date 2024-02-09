@@ -29,7 +29,7 @@ def render_template(tmpl, csv_dict, do_print=False):
         return ret_val
 
     loader_tmpl = Template(filename=os.path.join(this_module_dir, 'tmpl', tmpl))
-    ret_val = loader_tmpl.render(csv=csv_dict, agency=make_feed_agency_id, num=safe_num)
+    ret_val = loader_tmpl.render(csv=csv_dict, agency=make_feed_agency_id, img=make_logo, num=safe_num)
     if do_print:
         print(ret_val)
     else:
@@ -41,16 +41,28 @@ def render_template(tmpl, csv_dict, do_print=False):
     return ret_val
 
 
-def make_feed_agency_id(csv_line, def_id="BLANK:BLANK"):
+def make_feed_agency_id(logo, def_id="BLANK:BLANK"):
+    """ see logo.csv """
     try:
         # import pdb; pdb.set_trace()
-        id = csv_line.get('id').strip()        
-        agency_id = csv_line.get('agency_id').strip()
+        id = logo.get('id').strip()        
+        agency_id = logo.get('agency_id').strip()
         if agency_id is None or len(agency_id) < 1:
             agency_id = id
         ret_val = "{}:{}".format(id, agency_id)
     except:
         ret_val = def_id
+    return ret_val
+
+
+def make_logo(logo, pre="https://maps.trimet.org/images/agencies/",  def_val="url_error.png"):
+    try:
+        url = logo.get('url')
+        id = make_feed_agency_id(logo)
+        ext = url.rsplit('.', 1)[1] if '.' in url else 'png'
+        ret_val = "{}{}.{}".format(pre, id, ext)
+    except:
+        ret_val = def_val
     return ret_val
 
 
@@ -75,10 +87,9 @@ def curl_feeds(feeds, logos, all=False):
 
     # curl LOGO urls
     for l in logos:
-        url = l.get('url').strip()
-        if url or all:
-            ext = url.rsplit('.', 1)[1] if '.' in url else 'png'
-            print("curl {} > {}.{}".format(url, make_feed_agency_id(l), ext))
+        url = l.get('url')
+        logo = make_logo(l, pre="")
+        print("curl {} > {}".format(url, logo))
 
 
 def gtfs_feed_parser():
