@@ -41,14 +41,14 @@ def render_template(tmpl, csv_dict, do_print=False):
     return ret_val
 
 
-def make_feed_agency_id(csv_line, def_id="BLANK-BLANK"):
+def make_feed_agency_id(csv_line, def_id="BLANK:BLANK"):
     try:
         # import pdb; pdb.set_trace()
         id = csv_line.get('id').strip()        
         agency_id = csv_line.get('agency_id').strip()
         if agency_id is None or len(agency_id) < 1:
             agency_id = id
-        ret_val = "{}-{}".format(id, agency_id)
+        ret_val = "{}:{}".format(id, agency_id)
     except:
         ret_val = def_id
     return ret_val
