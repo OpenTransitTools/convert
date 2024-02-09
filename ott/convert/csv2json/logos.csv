@@ -1,7 +1,7 @@
 id,name,agency_id,order,url
 CANBY,Canby,227,,https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
 CANBYFERRY,Canby Ferry,1731,,https://www.canbyoregon.gov/sites/default/files/styles/full_node_primary/public/imageattachments/area-transit/page/26223/2-tone_vertical_logo.jpg
-CAT,Columbia Area Transit,,,
+CAT,Columbia Area Transit,,,https://www.ridecatbus.org/wp-content/themes/FoundationPress/dist/assets/images/fallback/cat-logo.png
 CAT,Hood Exp,,,
 CCRIDER,CC Rider,,,
 CHERRIOTS,Cherriots,cherriots-salem-or-us,50,https://www.cherriots.org/static/cherriots/images/logo.png
