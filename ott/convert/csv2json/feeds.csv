@@ -4,7 +4,7 @@ CANBYFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbyferry-or-us/ca
 CAT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip,,,,
 CCRIDER,https://oregon-gtfs.trilliumtransit.com/gtfs_data/columbiacounty-or-us/columbiacounty-or-us.zip,,,,
 CHERRIOTS,https://www.cherriots.org/media/doc/gtfs.zip,,,,
-CLACKAMAS,https://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip,,,,
+CLACKAMAS,https://datatools-flex.s3.amazonaws.com/public/Clackamas_County.zip,,,,
 CTRAN,https://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,
 MATS,https://data.trilliumtransit.com/gtfs/mountadams-wa-us/mountadams-wa-us.zip,,,,
 RIDECONNECTION,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip,,,,
