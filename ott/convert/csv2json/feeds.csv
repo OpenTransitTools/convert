@@ -5,7 +5,7 @@ CAT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-
 CCRIDER,https://oregon-gtfs.trilliumtransit.com/gtfs_data/columbiacounty-or-us/columbiacounty-or-us.zip,,,,
 CHERRIOTS,https://www.cherriots.org/media/doc/gtfs.zip,,,,
 CLACKAMAS,https://datatools-flex.s3.amazonaws.com/public/Clackamas_County.zip,,,,
-CTRAN,https://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,
+CTRAN,https://s3.amazonaws.com/datatools-flex/public/C-TRAN.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,
 MATS,https://data.trilliumtransit.com/gtfs/mountadams-wa-us/mountadams-wa-us.zip,,,,
 RIDECONNECTION,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip,,,,
 SAM,http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip,,,,
