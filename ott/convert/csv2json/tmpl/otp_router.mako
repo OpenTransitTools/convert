@@ -1,5 +1,5 @@
   "updaters": [
-  %for c in csv:
+  %for i, c in enumerate(csv):
     %if c['alerts'].strip():
     {
       "type": "real-time-alerts",
@@ -22,7 +22,7 @@
       "frequency": "29s",
       "url": "${c['vehicles'].strip()}",
       "feedId": "${c['id'].strip()}"
-    },
+    }${',' if len(csv) > i+1 else ''}
     %endif
   %endfor
     ]
