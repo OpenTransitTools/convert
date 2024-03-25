@@ -1,4 +1,3 @@
-  "transitFeeds": [
   %for i, c in enumerate(csv):
     %if c['gtfs'].strip():
     {
@@ -8,4 +7,3 @@
     }${',' if len(csv) > i+1 else ''}
     %endif
   %endfor
-  ]
