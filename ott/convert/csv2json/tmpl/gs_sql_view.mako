@@ -10,3 +10,7 @@ create materialized view routes as
   %endif
 %endfor
 ;
+
+create unique index on routes(agency_id, route_id);
+create index on routes using GIST(geom);
+vacuum full analyze routes;
