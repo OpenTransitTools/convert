@@ -1,3 +1,9 @@
+<%def name="route_cols(tbl)">
+%for c in ['route_id', 'agency_id', 'route_short_name', 'route_long_name', 'route_type', 'route_color', 'route_text_color', 'route_sort_order']:
+    ${tbl}r.${c}, 
+%endfor
+</%def>
+
 -- psql -d ott -U ott -f gs_sql_view.txt 
 drop schema if exists current cascade;
 create schema current;
@@ -7,7 +13,7 @@ drop materialized view if exists current.routes;
 create materialized view current.routes as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
-  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${id}', '::', ${id}r.route_id) as id, '${bid}' as feed_id, ${id}a.agency_name, ${id}r.* 
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${id}', '::', ${id}r.route_id) as id, '${bid}' as feed_id, ${id}a.agency_name, ${route_cols(id)}    ${id}cr.geom
    from ${id}.agency ${id}a, ${id}.routes ${id}r, ${id}.current_routes ${id}cr
    where ${id}a.agency_id = ${id}r.agency_id 
    and ${id}cr.route_id = ${id}r.route_id 
