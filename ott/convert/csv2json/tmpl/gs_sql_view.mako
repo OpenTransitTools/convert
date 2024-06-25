@@ -52,15 +52,13 @@ drop materialized view if exists current.flex;
 create materialized view current.flex as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
-  <% bid = c['id']; id=bid.strip().lower() %>select '${bid}' as feed_id, ${id}l.*
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '::', ${id}l.id) as pk, '${bid}' as feed_id, ${id}l.*
    from ${id}.locations ${id}l
    ${'union all' if len(csv) > i+1 else ''}
   %endif
 %endfor
 ;
 
-create unique index on current.flex(id);
-create unique index on current.flex(feed_id, id);
+create unique index on current.flex(pk);
 create index on current.flex using GIST(geom);
 vacuum full analyze current.flex;
-
