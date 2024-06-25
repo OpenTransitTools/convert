@@ -6,6 +6,7 @@ CCRIDER,https://oregon-gtfs.trilliumtransit.com/gtfs_data/columbiacounty-or-us/c
 CHERRIOTS,https://www.cherriots.org/media/doc/gtfs.zip,,,,
 CLACKAMAS,https://datatools-flex.s3.amazonaws.com/public/Clackamas_County.zip,https://passio3.com/clackamas/passioTransit/gtfs/realtime/serviceAlerts,https://passio3.com/clackamas/passioTransit/gtfs/realtime/tripUpdates,https://passio3.com/clackamas/passioTransit/gtfs/realtime/vehiclePositions,
 CTRAN,https://datatools-flex.s3.amazonaws.com/public/C-TRAN.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,
+CTRAN_FLEX,https://datatools-flex.s3.amazonaws.com/public/C-TRAN_Flex.zip,,,,
 MATS,https://data.trilliumtransit.com/gtfs/mountadams-wa-us/mountadams-wa-us.zip,,,,
 RIDECONNECTION,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip,,,,
 SAM,https://datatools-flex.s3.amazonaws.com/public/City_of_Sandy.zip,https://passio3.com/sandyor/passioTransit/gtfs/realtime/serviceAlerts,https://passio3.com/sandyor/passioTransit/gtfs/realtime/tripUpdates,https://passio3.com/sandyor/passioTransit/gtfs/realtime/vehiclePositions,
