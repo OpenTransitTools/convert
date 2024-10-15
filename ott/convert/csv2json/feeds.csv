@@ -19,7 +19,7 @@ WAPARK,https://datatools-flex.s3.amazonaws.com/public/Washington_Park_Shuttle.zi
 #SKAMANIA,https://data.trilliumtransit.com/gtfs/skamaniacounty-wa-us/skamaniacounty-wa-us.zip,,,,,
 #WOODBURN,https://oregon-gtfs.trilliumtransit.com/gtfs_data/woodburn-or-us/woodburn-or-us.zip,,,,,
 #YAMHILL,http://ycta.connexionz.net/rtt/public/resource/gtfs.zip,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate,https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition,,
-# TOO BIG - AMTRAK,https://content.amtrak.com/content/gtfs/GTFS.zip,A,T,V,MO
+# TOO BIG - AMTRAK,https://content.amtrak.com/content/gtfs/GTFS.zip,A,T,V,MO,TRUE
 # FLEX,http://gtfs.gis.flix.tech/gtfs_generic_us.zip,,,,,
 # POINT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip,,,,,
 # TILLAMOOK,https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip,http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto,,,,
