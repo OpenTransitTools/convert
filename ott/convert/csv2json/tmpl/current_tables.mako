@@ -4,7 +4,7 @@
 %endfor
 </%def>
 
--- psql -d ott -U ott -f gs_sql_view.txt 
+-- psql -d ott -U ott -f current_tables.views.txt 
 drop schema if exists current cascade;
 create schema current;
 

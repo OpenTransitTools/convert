@@ -120,7 +120,7 @@ def gtfs_feed_parser():
             render_template('otp_router.mako', csv_dict, cmd.print)
             output = True
         if cmd.sql or cmd.all:
-            render_template('gs_sql_view.mako', csv_dict, cmd.print)
+            render_template('current_tables.mako', csv_dict, cmd.print)
             output = True
         if cmd.ui or cmd.all:
             render_template('otp_ui.mako', logo_dict, cmd.print)
