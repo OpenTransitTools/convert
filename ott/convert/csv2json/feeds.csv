@@ -1,14 +1,17 @@
 id,gtfs,alerts,trips,vehicles,map_only,fuzzy_trips
-CLACKAMAS,https://datatools-flex.s3.amazonaws.com/public/Clackamas_County.zip,https://passio3.com/clackamas/passioTransit/gtfs/realtime/serviceAlerts,https://passio3.com/clackamas/passioTransit/gtfs/realtime/tripUpdates,https://passio3.com/clackamas/passioTransit/gtfs/realtime/vehiclePositions,,TRUE
-CTRAN,https://www.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,,
-CTRAN_FLEX,https://datatools-flex.s3.amazonaws.com/public/C-TRAN_Flex.zip,,,,,
-RIDECONNECTION,http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip,,,,,
-SAM,https://datatools-flex.s3.amazonaws.com/public/City_of_Sandy.zip,https://passio3.com/sandyor/passioTransit/gtfs/realtime/serviceAlerts,https://passio3.com/sandyor/passioTransit/gtfs/realtime/tripUpdates,https://passio3.com/sandyor/passioTransit/gtfs/realtime/vehiclePositions,,TRUE
-SMART,https://mysmartbus.com/gtfs,https://mysmartbus.com/gtfs-rt/alerts,https://mysmartbus.com/gtfs-rt/tripupdates,https://mysmartbus.com/gtfs-rt/vehiclepositions,,
-SWAN,https://datatools-flex.s3.amazonaws.com/public/Multnomah_County_Shuttles.zip,,,,,
+CLACKAMAS,https://s3.amazonaws.com/datatools-flex/public/Clackamas_County_Flex_v2.zip,https://passio3.com/clackamas/passioTransit/gtfs/realtime/serviceAlerts,https://passio3.com/clackamas/passioTransit/gtfs/realtime/tripUpdates,https://passio3.com/clackamas/passioTransit/gtfs/realtime/vehiclePositions,,TRUE
+CTRAN,https://s3.amazonaws.com/datatools-flex/public/C-TRAN.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,,
+CTRAN_FLEX,https://s3.amazonaws.com/datatools-flex/public/C-TRAN_Flex.zip,,,,,
+MULT,https://s3.amazonaws.com/datatools-flex/public/Multnomah_County_w_Flex.zip,,,,,
+RIDECONNECTION,https://s3.amazonaws.com/datatools-flex/public/Ride_Connection_w_Flex.zip,,,,,
+SAM,https://s3.amazonaws.com/datatools-flex/public/Sandy_Area_Metro_Flex_v2.zip,https://passio3.com/sandyor/passioTransit/gtfs/realtime/serviceAlerts,https://passio3.com/sandyor/passioTransit/gtfs/realtime/tripUpdates,https://passio3.com/sandyor/passioTransit/gtfs/realtime/vehiclePositions,,TRUE
+SMART,https://s3.amazonaws.com/datatools-flex/public/SMART.zip,https://mysmartbus.com/gtfs-rt/alerts,https://mysmartbus.com/gtfs-rt/tripupdates,https://mysmartbus.com/gtfs-rt/vehiclepositions,,
 TRIMET,https://developer.trimet.org/schedule/gtfs.zip,http://trimet.org/transweb/ws/V1/FeedSpecAlerts/includeFuture/true/suppressSystemWideAlerts/true,http://trimet.org/transweb/ws/V1/TripUpdate,http://trimet.org/transweb/ws/V1/VehiclePositions,,
-WAPARK,https://datatools-flex.s3.amazonaws.com/public/Washington_Park_Shuttle.zip,,,https://ewp.transloc.com/subscriptions/gtfsrt/vehicles.ashx,,TRUE
+WAPARK,https://s3.amazonaws.com/datatools-flex/public/Washington_Park_Shuttle.zip,,,https://ewp.transloc.com/subscriptions/gtfsrt/vehicles.ashx,,TRUE
+# https://s3.amazonaws.com/datatools-flex/public/index.html, <<< list of feeds in datatools,,,,
 # BELOW ARE, OTHER REGIONAL AGENCIES, (not in 1st RTP release),,,,
+#CTRAN,https://www.c-tran.com/images/Google/GoogleTransitUpload.zip,,http://gtfs-rt.c-tran.org/gtfsrealtime/TripUpdates,http://gtfs-rt.c-tran.org/gtfsrealtime/VehiclePositions,,
+#SMART,https://mysmartbus.com/gtfs,https://mysmartbus.com/gtfs-rt/alerts,https://mysmartbus.com/gtfs-rt/tripupdates,https://mysmartbus.com/gtfs-rt/vehiclepositions,,
 #CANBY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbytransit-or-us/canbytransit-or-us.zip,,,,,
 #CANBYFERRY,https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbyferry-or-us/canbyferry-or-us.zip,,,,,
 #CAT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip,,,,,
