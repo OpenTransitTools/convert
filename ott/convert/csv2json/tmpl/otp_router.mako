@@ -4,6 +4,9 @@
     {
       "type": "real-time-alerts",
       "frequency": "45s",
+      %if c['fuzzy_trips'].strip():
+      "fuzzyTripMatching": true,
+      %endif
       "url": "${c['alerts'].strip()}",
       "feedId": "${c['id'].strip()}"
     },
@@ -12,6 +15,9 @@
     {
       "type": "stop-time-updater",
       "frequency": "31s",
+      %if c['fuzzy_trips'].strip():
+      "fuzzyTripMatching": true,
+      %endif
       "url": "${c['trips'].strip()}",
       "feedId": "${c['id'].strip()}"
     },
@@ -20,6 +26,9 @@
     {
       "type": "vehicle-positions",
       "frequency": "29s",
+      %if c['fuzzy_trips'].strip():
+      "fuzzyTripMatching": true,
+      %endif
       "url": "${c['vehicles'].strip()}",
       "feedId": "${c['id'].strip()}"
     }${',' if len(csv) > i+1 else ''}
