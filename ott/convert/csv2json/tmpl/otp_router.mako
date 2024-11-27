@@ -14,7 +14,11 @@
     %if c['trips'].strip():
     {
       "type": "stop-time-updater",
+      %if c['id'].strip() == "TRIMET":
+      "frequency": "11s",
+      %else:
       "frequency": "31s",
+      %endif
       %if c['fuzzy_trips'].strip():
       "fuzzyTripMatching": true,
       %endif
@@ -25,7 +29,11 @@
     %if c['vehicles'].strip():
     {
       "type": "vehicle-positions",
+      %if c['id'].strip() == "TRIMET":
+      "frequency": "9s",
+      %else:
       "frequency": "29s",
+      %endif
       %if c['fuzzy_trips'].strip():
       "fuzzyTripMatching": true,
       %endif
