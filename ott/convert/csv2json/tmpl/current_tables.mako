@@ -4,9 +4,8 @@
 %endfor
 </%def>
 
--- psql -d ott -U ott -f current_tables.views.txt 
-drop schema if exists current cascade;
-create schema current;
+-- create current views (depends on an existing 'current' schema): 
+-- psql -d ott -U ott -f current_tables.views.txt
 
 -- routes
 drop materialized view if exists current.routes;
