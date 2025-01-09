@@ -1,5 +1,5 @@
 <%def name="route_cols(tbl)">
-%for c in ['route_id', 'agency_id', 'route_short_name', 'route_long_name', 'route_type', 'route_color', 'route_text_color', 'route_sort_order']:
+%for c in ['route_id', 'agency_id', 'route_label', 'route_short_name', 'route_long_name', 'route_type', 'route_color', 'route_text_color', 'route_sort_order']:
     ${tbl}r.${c}, 
 %endfor
 </%def>
