@@ -1,5 +1,8 @@
 id,name,agency_id,order,url
 #
+# contains the feed_id (id) and agency_id (from GTFS), plus the following:
+# pretty agency name (for OTP-RR app), agency sorting (route list), logo url
+#
 # https://www.multco.us/transit -and- https://ecoshuttle.com/
 # https://rideclackamas.org/provider/clackco - SAM, SMART, etc.. with trip planner
 # https://nwconnector.org/  - CCRIDER and other agencies
@@ -11,19 +14,20 @@ CANBYFERRY,Canby Ferry,1731,220,https://www.canbyoregon.gov/sites/default/files/
 CAT,Columbia Area Transit,37,300,https://gorgetranslink.com/wp-content/uploads/2019/03/CAT-Purple-tiny-for-website2-300x292.png 
 CCRIDER,Columbia County Rider,57,,https://nwconnector.org/wp-content/uploads/2017/03/output-onlinepngtools-1.png
 CHERRIOTS,Cherriots,cherriots-salem-or-us,50,https://www.cherriots.org/static/cherriots/images/logo.png
-CLACKAMAS,Clackamas County,3205,22,https://rideclackamas.org/wp-content/uploads/2023/05/logo-clackco.png
+CLACKAMAS,Clackamas County,1807,22,https://rideclackamas.org/wp-content/uploads/2023/05/logo-clackco.png
 CTRAN,C-TRAN,C-TRAN,10,https://d2tyb7byn1fef9.cloudfront.net/ctran.png
 MATS,Mt. Adams Transportation Service,1815,400,https://gorgetranslink.com/wp-content/uploads/2019/03/mt-adams-transportation-district.png
+MULT,Multnomah Co. Transit,162,7,https://multco-web7-psh-files-usw2.s3-us-west-2.amazonaws.com/s3fs-public/styles/small/s3/Access_Shuttle_Logo.jpg
 RIDECONNECTION,Ride Connection,133,24,https://rideconnection.org/assets/images/_template/rc_logo.svg
 SAM,Sandy Area Metro,86,40,https://rideclackamas.org/wp-content/uploads/2023/05/logo-sam.png
 SAM,Mt. Hood Express,188,40,https://rideclackamas.org/wp-content/uploads/2023/05/logo-mhx.png
 SCTD,South Clackamas Transit District,473,100,https://rideclackamas.org/wp-content/uploads/2023/05/logo-sctd.png
 SKAMANIA,Skamania County Transit,1814,400,https://gorgetranslink.com/wp-content/uploads/2019/03/skamania-county-transit-rev.png
 SMART,SMART,214,15,https://rideclackamas.org/wp-content/uploads/2023/05/logo-smart.png
-SWAN,Multnomah Co. ACCESS Shuttles,162,7,https://multco-web7-psh-files-usw2.s3-us-west-2.amazonaws.com/s3fs-public/styles/small/s3/Access_Shuttle_Logo.jpg
-TRIMET,TriMet,,1,http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png
+TRIMET,TriMet,TRIMET,1,http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png
 TRIMET,Portland Streetcar,PSC,1,https://d2tyb7byn1fef9.cloudfront.net/psc.png
 TRIMET,Portland Aerial Tram,TRAM,1,https://d2tyb7byn1fef9.cloudfront.net/tram.png
+WAVE,The Wave,X,5,https://thewave
 WAPARK,Washington Park Shuttle,501,5,https://explorewashingtonpark.org/wp-content/uploads/2021/05/ewp-logo.png 
-WOODBURN,Woodburn Transit,129,,https://www.woodburn-or.gov/sites/default/files/styles/full_node_primary_extra_wide/public/imageattachments/transit/page/1161/transit_banner_2.png
+WOODBURN,Woodburn Transit,129,350,https://www.woodburn-or.gov/sites/default/files/styles/full_node_primary_extra_wide/public/imageattachments/transit/page/1161/transit_banner_2.png
 YAMHILL,Yamhill County Transit Area,1,30,https://ycbus.org/wp-content/uploads/2021/11/YCT21-0913-Anniversary-Logo_FullColor-269x300.png

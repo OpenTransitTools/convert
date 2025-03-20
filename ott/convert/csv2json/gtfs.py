@@ -98,7 +98,7 @@ def gtfs_feed_parser():
     reads feeds.csv (and logos.csv) and outputs various .json config outputs
     """
     def_csv = os.path.join(this_module_dir, "data", "feeds.csv")
-    logo_csv = os.path.join(this_module_dir, "data", "logos.csv")    
+    logo_csv = os.path.join(this_module_dir, "data", "feed_agency.csv")
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
     misc_options(parser, "loader", "builder", "router", "ui", "pelias", "curl", "html", "print", "text", "sql", "all")
     cmd = parser.parse_args()
