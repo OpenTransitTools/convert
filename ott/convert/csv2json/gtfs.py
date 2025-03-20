@@ -97,8 +97,8 @@ def gtfs_feed_parser():
     feed parser
     reads feeds.csv (and logos.csv) and outputs various .json config outputs
     """
-    def_csv = os.path.join(this_module_dir, "feeds.csv")
-    logo_csv = os.path.join(this_module_dir, "logos.csv")    
+    def_csv = os.path.join(this_module_dir, "data", "feeds.csv")
+    logo_csv = os.path.join(this_module_dir, "data", "logos.csv")    
     parser = file_cmdline("poetry run gtfs_feeds", def_file=def_csv, do_parse=False)
     misc_options(parser, "loader", "builder", "router", "ui", "pelias", "curl", "html", "print", "text", "sql", "all")
     cmd = parser.parse_args()
@@ -160,11 +160,11 @@ def cat_agency_data():
 def csv2json():
     """
     csv2json: simple example showing convert to pretty json (array)
-    > poetry run csv2json  # default file is ott/convert/csv2json/feeds.csv
-    > poetry run csv2json ott/convert/csv2json/logos.csv
+    > poetry run csv2json  # default file is ott/convert/csv2json/data/feeds.csv
+    > poetry run csv2json ott/convert/csv2json/data/logos.csv
     """
     import json
     args = sys.argv[1:]
-    file = args[0] if len(args) > 0 else os.path.join(this_module_dir, "feeds.csv")
+    file = args[0] if len(args) > 0 else os.path.join(this_module_dir, "data", "feeds.csv")
     csv = get_csv(file)
     print(json.dumps(csv, indent=4))
