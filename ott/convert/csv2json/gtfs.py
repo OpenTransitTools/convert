@@ -19,6 +19,15 @@ def get_csv(feed, comment="#"):
     return csv_data
 
 
+def to_feed_hash(feed_dicts=[]):
+    """ take an array of feed dicts, and return a hash with the feed id """
+    ret_val = {}
+    for f in feed_dicts:
+        if ret_val.get(f.get('id')) is None:
+            ret_val[f.get('id')] = f
+    return ret_val
+
+
 def render_template(tmpl, csv_dict, do_print=False):
     def safe_num(num, def_num=888):
         ret_val = def_num
@@ -155,6 +164,31 @@ def cat_agency_data():
             print('{}{},{}'.format(c.get('agency_name').strip(), cmt, c.get('agency_id')))
         print()
 
+
+def shared_stops_parser():
+    """
+    simple shared stops read
+    reads shared_stops.csv, and match up with agency id from feed_agency.csv
+    format:  feed_id:agency_id:stop_id,...
+    example: "TRIMET:TRIMET:7646,CTRAN:C-TRAN:5555,RIDECONNECTION:133:876575"
+    """
+    stop_csv = os.path.join(this_module_dir, "data", "shared_stops.csv")
+    agency_csv = os.path.join(this_module_dir, "data", "feed_agency.csv")
+
+    stop_dict = get_csv(stop_csv)
+    agency_hash = to_feed_hash(get_csv(agency_csv))
+    tm = 'TRIMET:TRIMET'
+
+    ret_val = {}
+    for s in stop_dict:
+        stop_id = s['TRIMET_ID']
+        faid = "{}:{}".format(s['FEED_ID'], stop_id)
+        if ret_val.get(stop_id):
+            m = ret_val.get(stop_id)
+            ret_val[stop_id] = "{},{}".format(m, faid)
+        else:
+            ret_val[stop_id] = faid
+    print(ret_val)
 
 
 def csv2json():

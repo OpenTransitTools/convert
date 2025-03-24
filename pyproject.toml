@@ -19,6 +19,7 @@ PyYAML = "^6.0"
 csv2json = "ott.convert.csv2json.gtfs:csv2json"
 gtfs_feeds = "ott.convert.csv2json.gtfs:gtfs_feed_parser"
 agency_data = "ott.convert.csv2json.gtfs:cat_agency_data"
+sstops = "ott.convert.csv2json.gtfs:shared_stops_parser"
 
 json2locs = "ott.convert.yaml2json.generate:json_to_localizations"
 mockloc = "ott.convert.yaml2json.generate:mock_localization"
