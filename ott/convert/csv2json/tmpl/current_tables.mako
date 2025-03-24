@@ -7,6 +7,20 @@
 -- create current views (depends on an existing 'current' schema): 
 -- psql -d ott -U ott -f current_tables.views.txt
 
+
+-- patterns
+drop view if exists current.patterns;
+create view current.patterns as
+%for i, c in enumerate(csv):
+  %if c['id'].strip():
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', ':', ${id}t.trip_id) as id, '${bid}' as feed_id, ${id}t.route_id, ${id}p.geom
+   from ${id}.trips ${id}t, ${id}.patterns ${id}p
+   where ${id}t.shape_id = ${id}t.shape_id 
+   ${'union all' if len(csv) > i+1 else ''}
+  %endif
+%endfor
+;
+
 -- routes
 drop materialized view if exists current.routes;
 create materialized view current.routes as
