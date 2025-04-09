@@ -4,8 +4,11 @@
 %endfor
 </%def>
 
--- create current views (depends on an existing 'current' schema): 
+-- create current views
 -- psql -d ott -U ott -f current_tables.views.txt
+
+-- schema (note: might get a warning if 'current' already exists)
+create schema current;
 
 
 -- patterns
