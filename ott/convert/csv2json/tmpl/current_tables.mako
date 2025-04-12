@@ -69,7 +69,7 @@ create materialized view current.flex as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
   <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '::', ${id}l.id) as pk, '${bid}' as feed_id, ${id}l.*
-   from ${id}.locations ${id}l
+   from ${id}.flex_region ${id}l
    ${'union all' if len(csv) > i+1 else ''}
   %endif
 %endfor
