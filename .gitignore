@@ -18,6 +18,7 @@ data/*/
 *.so
 
 # Distribution / packaging
+site-packages
 .Python
 build/
 develop-eggs/
