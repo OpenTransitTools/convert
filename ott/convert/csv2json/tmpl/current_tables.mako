@@ -10,7 +10,6 @@
 -- schema (note: might get a warning if 'current' already exists)
 create schema current;
 
-
 -- patterns
 drop view if exists current.patterns;
 create view current.patterns as
@@ -52,6 +51,9 @@ create materialized view current.stops as
   <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '::', ${id}s.stop_id) as id, '${bid}' as feed_id, ${id}cs.route_short_names, ${id}cs.route_mode, ${id}cs.route_type, ${id}s.* 
    from ${id}.stops ${id}s, ${id}.current_stops ${id}cs
    where ${id}s.stop_id = ${id}cs.stop_id
+   %if c['id'].strip() != 'TRIMET':
+   and ${id}cs.shared_stops = ''
+   %endif
    ${'union all' if len(csv) > i+1 else ''}
   %endif
 %endfor
