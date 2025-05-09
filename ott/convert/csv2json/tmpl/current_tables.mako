@@ -52,7 +52,7 @@ create materialized view current.stops as
    from ${id}.stops ${id}s, ${id}.current_stops ${id}cs
    where ${id}s.stop_id = ${id}cs.stop_id
    %if c['id'].strip() != 'TRIMET':
-   and ${id}cs.shared_stops = ''
+   and ${id}s.shared_stops IS NULL
    %endif
    ${'union all' if len(csv) > i+1 else ''}
   %endif
