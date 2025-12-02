@@ -4,6 +4,9 @@
 %endfor
 </%def>
 
+-- sep is used below to define feed_id:stop_id (was :: at one time)
+<% sep=":" %>
+
 -- create current views
 -- psql -d ott -U ott -f current_tables.views.txt
 
@@ -15,7 +18,7 @@ drop view if exists current.patterns;
 create view current.patterns as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
-  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', ':', ${id}t.trip_id) as id, '${bid}' as feed_id, ${id}t.route_id, ${id}p.geom
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '${sep}', ${id}t.trip_id) as id, '${bid}' as feed_id, ${id}t.route_id, ${id}p.geom
    from ${id}.trips ${id}t, ${id}.patterns ${id}p
    where ${id}t.shape_id = ${id}p.shape_id 
    ${'union all' if len(csv) > i+1 else ''}
@@ -28,7 +31,7 @@ drop materialized view if exists current.routes;
 create materialized view current.routes as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
-  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${id}', '::', ${id}r.route_id) as id, '${bid}' as feed_id, ${id}a.agency_name, ${route_cols(id)}    ${id}cr.geom
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${id}', '${sep}', ${id}r.route_id) as id, '${bid}' as feed_id, ${id}a.agency_name, ${route_cols(id)}    ${id}cr.geom
    from ${id}.agency ${id}a, ${id}.routes ${id}r, ${id}.current_routes ${id}cr
    where ${id}a.agency_id = ${id}r.agency_id 
    and ${id}cr.route_id = ${id}r.route_id 
@@ -48,7 +51,7 @@ drop materialized view if exists current.stops;
 create materialized view current.stops as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
-  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '::', ${id}s.stop_id) as id, '${bid}' as feed_id, ${id}cs.route_short_names, ${id}cs.route_mode, ${id}cs.route_type, ${id}s.* 
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '${sep}', ${id}s.stop_id) as id, '${bid}' as feed_id, ${id}cs.route_short_names, ${id}cs.route_mode, ${id}cs.route_type, ${id}s.*
    from ${id}.stops ${id}s, ${id}.current_stops ${id}cs
    where ${id}s.stop_id = ${id}cs.stop_id
    %if c['id'].strip() != 'TRIMET':
@@ -70,7 +73,7 @@ drop materialized view if exists current.flex;
 create materialized view current.flex as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
-  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '::', ${id}l.id) as pk, '${bid}' as feed_id, ${id}l.*
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '${sep}', ${id}l.id) as pk, '${bid}' as feed_id, ${id}l.*
    from ${id}.flex_region ${id}l
    ${'union all' if len(csv) > i+1 else ''}
   %endif
