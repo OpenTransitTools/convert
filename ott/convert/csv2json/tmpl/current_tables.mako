@@ -31,7 +31,7 @@ drop materialized view if exists current.routes;
 create materialized view current.routes as
 %for i, c in enumerate(csv):
   %if c['id'].strip():
-  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${id}', '${sep}', ${id}r.route_id) as id, '${bid}' as feed_id, ${id}a.agency_name, ${route_cols(id)}    ${id}cr.geom
+  <% bid = c['id']; id=bid.strip().lower() %>select CONCAT('${bid}', '${sep}', ${id}r.route_id) as id, '${bid}' as feed_id, ${id}a.agency_name, ${route_cols(id)}    ${id}cr.geom
    from ${id}.agency ${id}a, ${id}.routes ${id}r, ${id}.current_routes ${id}cr
    where ${id}a.agency_id = ${id}r.agency_id 
    and ${id}cr.route_id = ${id}r.route_id 
