@@ -4,6 +4,7 @@ CTRAN,https://mail.c-tran.com/images/Google/GoogleTransitUpload.zip,,https://dev
 CTRAN_FLEX,https://c-tran.com/images/Google/TheCurrent_GTFSFlex.zip,,,,,
 MULT,https://oregon-gtfs.trilliumtransit.com/gtfs_data/swanisland-or-us/swanisland-or-us--flex-v2.zip,,,,,
 RIDECONNECTION,https://oregon-gtfs.trilliumtransit.com/gtfs_data/rideconnection-or-us/rideconnection-or-us--flex-v2.zip,,,,,
+#WASH_FLEX, https://api.us.sparelabs.com/v1/gtfs/generate/organization/6b803712-da41-4fe1-8ead-da3723ee3dad,,,,,
 SAM,https://oregon-gtfs.trilliumtransit.com/gtfs_data/sandy-or-us/sandy-or-us--flex-v2.zip,,,,,
 SMART,https://mysmartbus.com/gtfs,https://developer.trimet.org/ws/v1/gtfsCache?feedId=SMART&type=alerts&appid=8CBD14D520C6026CC7EEE56A9,https://developer.trimet.org/ws/v1/gtfsCache?feedId=SMART&type=trips&appid=8CBD14D520C6026CC7EEE56A9,https://developer.trimet.org/ws/v1/gtfsCache?feedId=SMART&type=vehicles&appid=8CBD14D520C6026CC7EEE56A9,,
 TRIMET,https://developer.trimet.org/schedule/gtfs.zip,http://trimet.org/transweb/ws/V1/FeedSpecAlerts/includeFuture/true/suppressSystemWideAlerts/true,http://trimet.org/transweb/ws/V1/TripUpdate,http://trimet.org/transweb/ws/V1/VehiclePositions,,
