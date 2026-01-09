@@ -14,7 +14,7 @@ dir_name: %(cache_dir_name)s
 feeds: [
   %for i, c in enumerate(csv):
     %if c['gtfs'].strip():
-    {"url": "${c['gtfs'].strip()}", "name": "${c['id'].strip()}.gtfs.zip"}${',' if len(csv) > i+1 else ''}
+    {"name": "${c['id'].strip()}.gtfs.zip", "url": "${c['gtfs'].strip()}", "faresV1": ${'true' if "1" in c['fare_type'] else 'false'}}${',' if len(csv) > i+1 else ''}
     %endif
   %endfor
   ]
@@ -29,7 +29,7 @@ feeds: [
         "${n}": "${c[n].strip()}",
         %endif
         %endfor
-        "agency_id": "${c['id'].strip()}"
+        "feed_id": "${c['id'].strip()}"
     }${',' if len(csv) > i+1 else ''}
     %endif
   %endfor
