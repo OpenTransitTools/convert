@@ -1,3 +1,15 @@
+[contact]
+name: Frank Purcell
+company: TriMet
+emails: purcellf@trimet.org
+
+[DEFAULT]
+cache_dir_name: gtfs
+cache_expire: 55
+
+[cache]
+dir_name: %(cache_dir_name)s
+
 [gtfs]
 feeds: [
   %for i, c in enumerate(csv):
@@ -6,7 +18,6 @@ feeds: [
     %endif
   %endfor
   ]
-
 
 [gtfs_realtime]
 feeds: [
