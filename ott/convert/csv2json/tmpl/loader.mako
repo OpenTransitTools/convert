@@ -7,6 +7,15 @@ emails: purcellf@trimet.org
 cache_dir_name: gtfs
 cache_expire: 55
 
+# note: these defaults can be used by map_server to generate geoserver config (e.g., datastore.xml)
+db_user: ott
+db_pass: ott
+db_name: ott
+db_geoserver: db
+db_machine: 127.0.0.1
+db_port: 5432
+db_url: postgresql://%(db_user)s:%(db_pass)s@%(db_machine)s:%(db_port)s/%(db_name)s
+
 [cache]
 dir_name: %(cache_dir_name)s
 
