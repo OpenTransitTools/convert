@@ -17,7 +17,7 @@
       %if c['id'].strip() == "TRIMET":
       "frequency": "11s",
       %else:
-      "frequency": "31s",
+      "frequency": "11s",
       %endif
       %if c['fuzzy_trips'].strip():
       "fuzzyTripMatching": true,
@@ -30,9 +30,9 @@
     {
       "type": "vehicle-positions",
       %if c['id'].strip() == "TRIMET":
-      "frequency": "9s",
+      "frequency": "13s",
       %else:
-      "frequency": "29s",
+      "frequency": "14s",
       %endif
       %if c['fuzzy_trips'].strip():
       "fuzzyTripMatching": true,
